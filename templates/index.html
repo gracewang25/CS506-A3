@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KMeans Clustering Visualization</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">KMeans Visualization</a>
+    </nav>
+
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        Controls
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="init_method">Initialization Method:</label>
+                            <select id="init_method" class="form-control">
+                                <option value="random">Random</option>
+                                <option value="farthest_first">Farthest First</option>
+                                <option value="kmeans++">KMeans++</option>
+                                <option value="manual">Manual</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="num_clusters">Number of Clusters:</label>
+                            <input type="number" id="num_clusters" class="form-control" value="3" min="1" max="10">
+                        </div>
+                        <button id="generate_dataset" class="btn btn-success btn-block mb-2">Generate New Dataset</button>
+                        <button id="step" class="btn btn-info btn-block mb-2">Step Through KMeans</button>
+                        <button id="run" class="btn btn-warning btn-block mb-2">Run to Convergence</button>
+                        <button id="reset" class="btn btn-danger btn-block">Reset</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div id="plot"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer bg-dark text-white mt-4">
+        <div class="container text-center">
+            <span>&copy; 2023 KMeans Visualization App</span>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+]    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+</body>
+</html>

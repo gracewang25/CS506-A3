@@ -22,7 +22,7 @@ class KMeansClustering:
         else:
             raise ValueError("Unknown initialization method.")
 
-    def farthest_first_initialization(self, X):
+    def qfarthest_first_initialization(self, X):
         centroids = [X[np.random.randint(len(X))]]
         for _ in range(1, self.k):
             distances = np.array([min([np.linalg.norm(x - c) for c in centroids]) for x in X])
